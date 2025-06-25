@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+
+  --font-family-headings: "Lexend Deca", sans-serif;
+  --font-family-body: "Big Shoulders Display", sans-serif;
+  --font-size-body: 15px;
+  --font-size-title: 2.5rem;
+  --font-size-body: 1rem;
+  --font-size-button: 0.9rem;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 3rem;
+
+  --card-padding: var(--space-xl);
+  --border-radius: 0.5rem;
+
+  --transition-base: 0.3s ease;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--transparent-white);
+  line-height: 1.6;
+}
+
+.car-services {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-md);
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 57.5rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.service-card {
+  flex: 1;
+  padding: var(--card-padding);
+  display: felx;
+  flex-direction: column;
+  min-height: 28rem;
+}
+
+.card-header {
+  margin-bottom: var(--space-lg);
+}
+
+.card-icon {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: var(--space-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.card-title {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: -0.125rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--very-light-gray);
+}
+
+.card-content {
+  flex-grow: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.card-description {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: var(--transparent-white);
+  margin: 0;
+}
+
+.card-footer {
+  margin-top: 5.5rem;
+}
+
+.service-card--sedans {
+  background-color: var(--bright-orange);
+}
+
+.service-card--suvs {
+  background-color: var(--dark-cyan);
+}
+.service-card--luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+  color: var(--transparent-white);
+  background-color: var(--very-light-gray);
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.service-card--sedans .card-btn {
+  color: var(--bright-orange);
+}
+
+.service-card--suvs .card-btn {
+  color: var(--dark-cyan);
+}
+
+.service-card--luxury .card-btn {
+  color: var(--very-dark-cyan);
+}
+
+.card-btn:hover {
+  background-color: transparent;
+  color: var(--very-light-gray);
+  outline: 2px solid var(--very-light-gray);
+  outline-offset: 0.125rem;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 480px) {
+    .service-card {
+        padding: var(--space-lg);
+        min-height: 24rem;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-description {
+        font-size: .9rem;
+    }
+}
+
